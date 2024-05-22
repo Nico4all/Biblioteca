@@ -1,0 +1,33 @@
+﻿@page
+@model Biblioteca.Pages.Books.CreateModel
+
+    <h2>Create Book</h2>
+
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Book.Titulo" class="control-label"></label>
+            <input asp-for="Book.Titulo" class="form-control" />
+            <span asp-validation-for="Book.Titulo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Book.Autor" class="control-label"></label>
+            <input asp-for="Book.Autor" class="form-control" />
+            <span asp-validation-for="Book.Autor" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Book.Ano" class="control-label"></label>
+            <input asp-for="Book.Ano" class="form-control" />
+            <span asp-validation-for="Book.Ano" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Book.GeneroId" class="control-label"></label>
+            <select asp-for="Book.GeneroId" class="form-control" asp-items="Model.Generos"></select>
+            <span asp-validation-for="Book.GeneroId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+

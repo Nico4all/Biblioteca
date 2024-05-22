@@ -1,0 +1,54 @@
+﻿@page
+@model Biblioteca.Pages.Books.IndexModel
+@{
+    ViewData["Title"] = "Index Books";
+}
+<h1>Index Books</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Ano)
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @item.Genero.Description
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

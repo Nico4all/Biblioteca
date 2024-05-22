@@ -1,0 +1,47 @@
+﻿@page
+@model Biblioteca.Pages.Books.EditModel
+@{
+    ViewData["Title"] = "Editar Libro";
+}
+
+<h1>Editar Libro</h1>
+
+<h4>Libro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Book.Id" />
+
+            <div class="form-group">
+                <label asp-for="Book.Titulo" class="control-label"></label>
+                <input asp-for="Book.Titulo" class="form-control" />
+                <span asp-validation-for="Book.Titulo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Book.Autor" class="control-label"></label>
+                <input asp-for="Book.Autor" class="form-control" />
+                <span asp-validation-for="Book.Autor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Book.Ano" class="control-label"></label>
+                <input asp-for="Book.Ano" class="form-control" />
+                <span asp-validation-for="Book.Ano" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Book.GeneroId" class="control-label"></label>
+                <select asp-for="Book.GeneroId" class="form-control" asp-items="Model.Generos"></select>
+                <span asp-validation-for="Book.GeneroId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-primary">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
