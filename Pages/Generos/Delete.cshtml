@@ -1,0 +1,28 @@
+﻿@page
+@model Biblioteca.Pages.Generos.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Género";
+}
+
+<h1>Eliminar Género</h1>
+
+<h3>¿Estás seguro de que quieres eliminar este género?</h3>
+<div>
+    <h4>Género</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Descripción
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Genero.Description
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Genero.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-primary">Volver a la lista</a>
+    </form>
+</div>
+}

@@ -1,3 +1,8 @@
+using Biblioteca.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
 namespace Biblioteca
 {
     public class Program
@@ -8,6 +13,8 @@ namespace Biblioteca
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            // Agregar el contexto BibliotecaContext a la aplicación
+            builder.Services.AddDbContext<BibliotecaContext>();
 
             var app = builder.Build();
 
