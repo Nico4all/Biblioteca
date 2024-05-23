@@ -12,7 +12,7 @@ namespace Biblioteca.Models
         public string Name { get; set;}
 
         //llevar llave de rol a user
-        public ICollection<User> Users { get; set; } = default!; // propiedad de navegacion 
+        public ICollection<User>? Users { get; set; } = default!; // propiedad de navegacion 
 
     }
 }
