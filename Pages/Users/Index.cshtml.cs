@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Biblioteca.Pages.Rol
+namespace Biblioteca.Pages.Users
 {
     public class IndexModel : PageModel
     {
