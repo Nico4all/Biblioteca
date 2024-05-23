@@ -20,7 +20,8 @@ namespace Biblioteca.Models
         public Genero? Genero { get; set; }
 
         //LLEVAR LLAVE A PERSTAMO
-        
+        public ICollection<Prestamo>? Prestamos { get; set; } = default!; // propiedad de navegacion
+
 
     }
 }

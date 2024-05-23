@@ -23,6 +23,6 @@ namespace Biblioteca.Models
         public Rol? Rol { get; set; }
 
         //llevar llave a prestamo
-
+        public ICollection<Prestamo>? Prestamos { get; set; } = default!; // propiedad de navegacion
     }
 }

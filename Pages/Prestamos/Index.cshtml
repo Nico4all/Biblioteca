@@ -1,0 +1,68 @@
+﻿@page
+@model Biblioteca.Pages.Prestamos.IndexModel
+@{
+    ViewData["Title"] = "Index Prestamos";
+}
+<h1>Index Users</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Prestamos[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prestamos[0].Inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prestamos[0].Fin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prestamos[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prestamos[0].BookId)
+            </th>
+            <th>
+                Rol
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Prestamos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @item.Book.Titulo
+                </td>
+                <td>
+                    @item.User.Name
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
