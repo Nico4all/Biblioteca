@@ -1,0 +1,45 @@
+﻿@page
+@model Biblioteca.Pages.Prestamos.EditModel
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+<h1>Editar Prestamo</h1>
+
+<h4>Prestamo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Prestamo.Id" />
+
+            <div class="form-group">
+                <label asp-for="Prestamo.Inicio" class="control-label"></label>
+                <input asp-for="Prestamo.Inicio" class="form-control" />
+                <span asp-validation-for="Prestamo.Inicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Prestamo.Fin" class="control-label"></label>
+                <input asp-for="Prestamo.Fin" class="form-control" />
+                <span asp-validation-for="Prestamo.Fin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prestamo.UserId" class="control-label"></label>
+                <select asp-for="Prestamo.UserId" class="form-control" asp-items="Model.Users"></select>
+                <span asp-validation-for="Prestamo.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prestamo.BookId" class="control-label"></label>
+                <select asp-for="Prestamo.BookId" class="form-control" asp-items="Model.Books"></select>
+                <span asp-validation-for="Prestamo.BookId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-primary">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
