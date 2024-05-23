@@ -4,6 +4,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Biblioteca.Models
 {
@@ -12,6 +13,9 @@ namespace Biblioteca.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         //traer llave de ROl

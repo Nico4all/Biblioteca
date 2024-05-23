@@ -1,5 +1,6 @@
 using Biblioteca.Data;
 using Biblioteca.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -8,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Pages.Generos
 {
-    
-        public class IndexModel : PageModel
+    [Authorize]
+    public class IndexModel : PageModel
         {
             private readonly BibliotecaContext _context;
 

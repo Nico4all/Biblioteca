@@ -5,10 +5,11 @@ using Biblioteca.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static System.Reflection.Metadata.BlobBuilder;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace Biblioteca.Pages.Users
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly BibliotecaContext _context;

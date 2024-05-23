@@ -1,11 +1,13 @@
 using Biblioteca.Data;
 using Biblioteca.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Biblioteca.Pages.Rols
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly BibliotecaContext _context;

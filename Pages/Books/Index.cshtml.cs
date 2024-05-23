@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Biblioteca.Pages.Books
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly BibliotecaContext _context;
